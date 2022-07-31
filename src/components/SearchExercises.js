@@ -15,10 +15,10 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
     const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
 
     setBodyParts(['all', ...bodyPartsData]);
-   }
+   };
 
    fetchExercisesData();
-  }, [])
+  }, []);
   
 
   const handleSearch = async () => {
@@ -29,16 +29,16 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
         (exercise)=> exercise.name.toLowerCase().includes(search)
         || exercise.target.toLowerCase().includes(search)
         || exercise.equipment.toLowerCase().includes(search)
-        || exercise.bodypart.toLowerCase().includes(search)
+        || exercise.bodyPart.toLowerCase().includes(search)
       );
 
       setSearch('');
       setExercises(searchedExercises);
     }
-  }
+  };
 
   return (
-    <Stack alignItems="center" mt="37px" justifyingContent="center" p="20px">
+    <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography fontWeight={700} sx={{fontSize: {lg:'44px', xs: '30px'}}} mb="50px" textAlign="center">
         Awesome Exercises You <br/>Should Know
       </Typography>
