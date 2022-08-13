@@ -3,33 +3,36 @@ import { Stack, Typography } from '@mui/material';
 
 import Icon from '../assets/icons/gym.png';
 
-const BodyPart = ({item, setBodyPart, bodyPart}) => {
-  return (
+const BodyPart = ({item, setBodyPart, bodyPart}) => (
     <Stack
         type="button"
         alignContent="center"
         justifyContent="center"
         className="bodyPart-card"
-        sx={{ 
-            borderTop: bodyPart === item? '4px solid #ff2625' :'',
+        sx= {bodyPart===item?
+            {borderTop:'4px solid #ff2625',
             backgroundColor: '#fff',
             borderBottomLeftRadius: '20px',
             width: '200px',
             heigth: '282px',
             cursor: 'pointer',
-            gap: '7px'
-        }}
-        onClick={()=>{
+            gap: '47px'}:
+            { background: '#fff',
+            borderBottomLeftRadius: '20px', 
+            width: '270px', 
+            height: '282px', 
+            cursor: 'pointer', 
+            gap: '47px' }}
+        onClick={() => {
             setBodyPart(item);
-            window.scrollTo({top: 1800, left:100, behaviour: 'smooth'});
+            window.scrollTo({ top: 1800, left:100, behaviour: 'smooth' });
         }}
     >
-        <img src={Icon}  alt="dumbbell" style={{width: '40px', heigth: '40px', align: 'center'}}/>
-        <Typography fontSize="21px" fontWeight="bold" color="#3A1212" textTransform="capitalize ">
+        <img src={Icon}  alt="dumbbell" style={{width: '40px', heigth: '40px'}}/>
+        <Typography fontSize="24px" fontWeight="bold" fontFamily="Alegreya" color="#3A1212" textTransform="capitalize ">
             {item}
         </Typography>
     </Stack>
-  )
-}
+);
 
-export default BodyPart
+export default BodyPart;
